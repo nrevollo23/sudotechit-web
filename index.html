@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUDOTECH IT - Soluciones Tecnológicas Integrales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #34C759;
+      --secondary-color: #6B7280;
+      --background-light: #F9FAFB;
+      --background-dark: #FFFFFF;
+      --accent-color: #2EA44F;
+      --overlay-color: rgba(0, 0, 0, 0.5);
+      --font-sans: 'Open Sans', sans-serif;
+      --font-heading: 'Montserrat', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); color: var(--secondary-color); background: var(--background-dark); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* Header */
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      z-index: 10;
+    }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 40px; margin-right: 10px; }
+    .logo span { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: #fff; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav a { font-weight: 600; color: #fff; transition: color .3s; }
+    nav a:hover { color: var(--accent-color); }
+
+    /* Hero / Portada */
+    .hero {
+      position: relative;
+      background: url('portada.png') center/cover no-repeat;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--overlay-color);
+      z-index: 1;
+    }
+    .hero h1, .hero p, .hero .btn {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 { font-family: var(--font-heading); font-size: 3rem; margin-bottom: 20px; }
+    .hero p { font-size: 1.125rem; max-width: 600px; margin-bottom: 30px; }
+    .btn { background: var(--primary-color); color: #fff; padding: 15px 30px; font-family: var(--font-heading); font-weight: 600; border-radius: 5px; transition: background .3s; }
+    .btn:hover { background: var(--accent-color); }
+
+    /* Sections */
+    section { padding: 80px 20px; }
+    h2 { font-family: var(--font-heading); font-size: 2rem; color: #000; text-align: center; margin-bottom: 40px; }
+
+    /* Services */
+    .services .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+    .card { background: var(--background-light); padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .card h3 { font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 10px; }
+    .card p { font-size: 0.95rem; color: var(--secondary-color); }
+
+    /* About */
+    .about p { max-width: 800px; margin: 0 auto; font-size: 1rem; color: var(--secondary-color); }
+
+    /* Contact */
+    .contact form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+    .contact input, .contact textarea { padding: 15px; border: 1px solid #D1D5DB; border-radius: 5px; font-size: 1rem; }
+    .contact button { border: none; cursor: pointer; }
+
+    /* Footer */
+    footer { background: var(--background-light); padding: 40px 20px; text-align: center; font-size: 0.9rem; color: var(--secondary-color); }
+    footer a { color: var(--primary-color); margin: 0 10px; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.25rem; }
+      header { padding: 15px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo_sudotechit.jpeg" alt="SUDOTECH IT Logo">
+      <span>SUDOTECH IT</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Impulsamos tu Infraestructura Tecnológica</h1>
+    <p>Soluciones integrales en la nube, redes, VoIP, desarrollo a medida y más, diseñadas para optimizar y proteger tu negocio.</p>
+    <a href="#contact" class="btn">Solicita una Consulta</a>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Servicios</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Consultoría IT</h3>
+        <p>Análisis, diseño e implementación de arquitecturas de infraestructura seguras y escalables.</p>
+      </div>
+      <div class="card">
+        <h3>Soluciones en la Nube</h3>
+        <p>Implementación y gestión en AWS, GCP y Azure para maximizar rendimiento y costes.</p>
+      </div>
+      <div class="card">
+        <h3>VoIP y Comunicaciones</h3>
+        <p>Instalación y optimización de sistemas VoIP con integración CRM y call centers.</p>
+      </div>
+      <div class="card">
+        <h3>Desarrollo de Software</h3>
+        <p>Aplicaciones web y móviles personalizadas que se adaptan a tus procesos de negocio.</p>
+      </div>
+      <div class="card">
+        <h3>Seguridad y Cumplimiento</h3>
+        <p>Implementación de protocolos ISO 27001, gestión de accesos y auditorías de seguridad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>Nosotros</h2>
+    <p>SUDOTECH IT es una empresa especializada en soluciones tecnológicas para pequeñas y medianas empresas. Con un equipo de consultores certificados en AWS, GCP y expertos en ciberseguridad, ofrecemos un enfoque personalizado y proactivo para garantizar la continuidad y crecimiento de tu negocio.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contacto</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Nombre" required>
+      <input type="email" name="email" placeholder="Correo Electrónico" required>
+      <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+      <button type="submit" class="btn">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 SUDOTECH IT | info@sudotechit.com | +1 (123) 456-7890</p>
+    <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('¡Gracias por contactarnos! Te responderemos pronto.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
+
