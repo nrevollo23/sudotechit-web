@@ -1,0 +1,18 @@
+# Configuración de line endings
+* text=auto eol=lf
+
+# Archivos que deben mantener CRLF
+*.{cmd,bat} text eol=crlf
+*.{ps1,psm1} text eol=crlf
+
+# Archivos binarios
+*.{png,jpg,jpeg,gif,webp,svg,ico} binary
+*.{woff,woff2,ttf,eot} binary
+*.{pdf,docx,xlsx} binary
+
+# Archivos de configuración
+*.{json,yml,yaml,md,txt,html,css,js,ts,tsx} text
+
+# Ignorar cambios en archivos de lock
+package-lock.json merge=union
+yarn.lock merge=union

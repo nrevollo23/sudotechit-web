@@ -1,0 +1,51 @@
+{
+  "name": "sudotechit-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nrevollo23/sudotechit-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nrevollo23/sudotechit-web/issues"
+  },
+  "homepage": "https://github.com/nrevollo23/sudotechit-web#readme",
+  "dependencies": {
+    "@sanity/client": "^7.16.0",
+    "@sanity/image-url": "^2.0.3",
+    "@types/node": "^25.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "groq": "^5.12.0",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^9.39.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "gh-pages": "^6.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "tsc-files": "^1.1.4"
+  }
+}
