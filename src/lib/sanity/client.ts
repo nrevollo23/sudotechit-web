@@ -14,17 +14,9 @@ export const sanityClient = createClient({
 export const urlFor = (source: any) => 
   imageUrlBuilder(sanityClient).image(source)
 
-// Función para obtener datos con tipado
-export async function sanityFetch<QueryResponse>({ 
-  query, 
-  params = {}, 
-  tags = [],
-}: {
-  query: string
-  params?: any
-  tags?: string[]
-}): Promise<QueryResponse> {
-  return sanityClient.fetch<QueryResponse>(query, params, { 
+// Función para obtener datos
+export async function sanityFetch(query: string, params: any = {}, tags: string[] = []) {
+  return sanityClient.fetch(query, params, { 
     next: { 
       revalidate: process.env.NODE_ENV === 'development' ? 30 : 3600, 
       tags,

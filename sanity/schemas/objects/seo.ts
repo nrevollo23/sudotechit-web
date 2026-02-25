@@ -10,7 +10,7 @@ export const seo = defineType({
       title: 'Meta Título',
       type: 'string',
       description: 'Título para SEO (aparece en buscadores)',
-      validation: Rule => Rule.max(60).warning('El título ideal tiene menos de 60 caracteres'),
+      validation: (Rule: any) => Rule.max(60).warning('El título ideal tiene menos de 60 caracteres'),
     }),
     defineField({
       name: 'metaDescription',
@@ -18,7 +18,7 @@ export const seo = defineType({
       type: 'text',
       rows: 3,
       description: 'Descripción para SEO (aparece en buscadores)',
-      validation: Rule => Rule.max(160).warning('La descripción ideal tiene menos de 160 caracteres'),
+      validation: (Rule: any) => Rule.max(160).warning('La descripción ideal tiene menos de 160 caracteres'),
     }),
     defineField({
       name: 'ogImage',
