@@ -15,4 +15,8 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+  
+  // Configuración para modo local
+  useCdn: process.env.NODE_ENV === 'production',
+  perspective: 'published',
 })
