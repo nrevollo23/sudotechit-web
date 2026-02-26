@@ -11,6 +11,7 @@
     "prepare": "husky install",
     "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out",
     "sanity:start": "sanity dev",
+    "sanity:start-local": "sanity dev --config sanity.config.local.ts",
     "sanity:deploy": "sanity deploy",
     "sanity:build": "sanity build"
   },
@@ -21,7 +22,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/nrevollo23/sudotechit-web/issues"
   },
@@ -29,6 +30,7 @@
   "dependencies": {
     "@sanity/client": "^7.16.0",
     "@sanity/image-url": "^2.0.3",
+    "@sanity/vision": "^5.12.0",
     "@types/node": "^25.3.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -36,10 +38,14 @@
     "next": "^16.1.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "styled-components": "^6.3.11",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@sanity/cli": "^5.12.0",
+    "@sanity/default-layout": "^2.36.2",
+    "@sanity/default-login": "^2.36.2",
+    "@sanity/overlays": "^2.3.59",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
     "@typescript-eslint/parser": "^8.56.1",
     "eslint": "^8.57.0",
