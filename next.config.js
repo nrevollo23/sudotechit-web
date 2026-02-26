@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+export default {
   reactStrictMode: true,
   images: {
     domains: ['cdn.sanity.io'], // Para imágenes de Sanity
@@ -10,5 +10,3 @@ const nextConfig = {
   output: 'export', // Para estático en GitHub Pages
   distDir: 'out',
 }
-
-module.exports = nextConfig
