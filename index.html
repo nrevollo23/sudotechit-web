@@ -269,12 +269,12 @@
     reveal(); // Trigger on load
     // Manejo del formulario con Formspree (Sin salir de la página)
     var form = document.getElementById("contact-form");
-    var status = document.getElementById("form-status");
+    var mensajeEstado = document.getElementById("form-status"); // <-- Cambiamos el nombre aquí
 
     async function handleSubmit(event) {
       event.preventDefault();
       var data = new FormData(event.target);
-      
+
       // Cambiamos el texto del botón mientras envía
       const btn = form.querySelector('button');
       const originalBtnText = btn.innerText;
@@ -289,37 +289,37 @@
         }
       }).then(response => {
         if (response.ok) {
-          status.innerHTML = "¡Gracias por contactarnos! El equipo de SUDOTECH IT te responderá pronto.";
-          status.className = "success-msg";
+          // Usamos la nueva variable aquí
+          mensajeEstado.innerHTML = "¡Gracias por contactarnos! El equipo de SUDOTECH IT te responderá pronto.";
+          mensajeEstado.className = "success-msg";
           form.reset();
         } else {
           response.json().then(data => {
             if (Object.hasOwn(data, 'errors')) {
-              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+              mensajeEstado.innerHTML = data["errors"].map(error => error["message"]).join(", ")
             } else {
-              status.innerHTML = "Oops! Hubo un problema al enviar tu mensaje."
+              mensajeEstado.innerHTML = "Oops! Hubo un problema al enviar tu mensaje."
             }
-            status.className = "error-msg";
+            mensajeEstado.className = "error-msg";
           })
         }
       }).catch(error => {
-        status.innerHTML = "Oops! Hubo un problema al enviar tu mensaje."
-        status.className = "error-msg";
+        mensajeEstado.innerHTML = "Oops! Hubo un problema al enviar tu mensaje."
+        mensajeEstado.className = "error-msg";
       }).finally(() => {
         // Restauramos el botón
         btn.innerText = originalBtnText;
         btn.disabled = false;
-        
+
         // Ocultar el mensaje después de 5 segundos
         setTimeout(() => {
-          status.innerHTML = "";
-          status.className = "";
+          mensajeEstado.innerHTML = "";
+          mensajeEstado.className = "";
         }, 5000);
       });
     }
-    
-    form.addEventListener("submit", handleSubmit);
 
-  </script>
+    form.addEventListener("submit", handleSubmit);
+      </script>
 </body>
 </html>
